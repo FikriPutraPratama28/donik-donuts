@@ -69,20 +69,21 @@
                      style="width:100%;height:100%;object-fit:cover">
                 @else
                 <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center">
-  <svg width="60" height="60" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="22" cy="22" r="22" fill="#d4522a"/>
-    <circle cx="22" cy="22" r="18" fill="#ffffff"/>
-    <circle cx="22" cy="22" r="11" fill="#f97316" stroke="#d4522a" stroke-width="1.5"/>
-    <circle cx="22" cy="22" r="5" fill="#ffffff"/>
-    <rect x="16" y="12" width="3" height="1.5" rx="0.75" fill="#ec4899" transform="rotate(-30 16 12)"/>
-    <rect x="26" y="13" width="3" height="1.5" rx="0.75" fill="#3b82f6" transform="rotate(20 26 13)"/>
-    <rect x="29" y="21" width="3" height="1.5" rx="0.75" fill="#22c55e" transform="rotate(-10 29 21)"/>
-    <rect x="26" y="29" width="3" height="1.5" rx="0.75" fill="#f59e0b" transform="rotate(40 26 29)"/>
-    <rect x="16" y="30" width="3" height="1.5" rx="0.75" fill="#ec4899" transform="rotate(-20 16 30)"/>
-    <rect x="12" y="22" width="3" height="1.5" rx="0.75" fill="#a855f7" transform="rotate(10 12 22)"/>
-    <text x="22" y="24.5" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="5.5" fill="#7c2d12">DONIK</text>
-    <text x="22" y="30.5" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="4" fill="#7c2d12">DONUTS</text>
-  </svg>
+    @if(file_exists(public_path('images/logo.png')))
+        <img src="{{ asset('images/logo.png') }}" alt="Donik Donuts" width="80" height="80" style="border-radius:50%;object-fit:cover">
+    @else
+        <svg width="80" height="80" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="55" cy="55" r="55" fill="#1a1a1a"/>
+            <circle cx="55" cy="55" r="49" fill="none" stroke="#fff" stroke-width="2"/>
+            <circle cx="55" cy="42" r="20" fill="#f5c518"/>
+            <ellipse cx="55" cy="39" rx="16" ry="12" fill="#f472b6"/>
+            <circle cx="55" cy="42" r="7" fill="#1a1a1a"/>
+            <rect x="42" y="30" width="5" height="2" rx="1" fill="#22c55e" transform="rotate(-30 42 30)"/>
+            <rect x="63" y="28" width="5" height="2" rx="1" fill="#3b82f6" transform="rotate(20 63 28)"/>
+            <rect x="68" y="40" width="5" height="2" rx="1" fill="#f59e0b" transform="rotate(-10 68 40)"/>
+            <text x="55" y="76" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="7" fill="#f472b6">DONIK DONUTS</text>
+        </svg>
+    @endif
 </div>
                 @endif
             </div>

@@ -8,27 +8,29 @@
 <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
 <link rel="shortcut icon" href="{{ asset('favicon.svg') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#1c1c1e;--ink2:#3a3a3c;--ink3:#636366;--dim:#aeaeb2;
-  --line:#e5e5ea;--bg:#f2f2f7;--white:#fff;
-  --tea:#3d6b4f;--tea-d:#2f5440;--tea-l:#eaf4ee;--tea-p:#f4faf6;
-  --red:#c0392b;
-  --topbar:#1c1c1e;--cats:#1c1f1e;
+  /* ─── Skote POS Variables ─── */
+  --ink:#495057;--ink2:#343a40;--ink3:#74788d;--dim:#adb5bd;
+  --line:#eff2f7;--bg:#f8f8fb;--white:#fff;
+  /* Skote primary */
+  --tea:#556ee6;--tea-d:#4458c9;--tea-l:#e8ebfd;--tea-p:#f0f3fe;
+  --red:#f46a6a;
+  --topbar:#2c2f3b;--cats:#2c2f3b;
 }
 
 /* ── DARK MODE ── */
 [data-theme="dark"]{
-  --ink:#f2f2f7;--ink2:#e5e5ea;--ink3:#aeaeb2;--dim:#636366;
-  --line:#3a3a3c;--bg:#111113;--white:#1c1c1e;
-  --tea:#4ade80;--tea-d:#22c55e;--tea-l:#0d2e1a;--tea-p:#0a1f13;
-  --topbar:#0a0a0c;--cats:#0d110e;
+  --ink:#ced4da;--ink2:#e9ecef;--ink3:#adb5bd;--dim:#6c757d;
+  --line:#32383e;--bg:#1a1d23;--white:#212529;
+  --tea:#6c7ef7;--tea-d:#556ee6;--tea-l:#1a1f3a;--tea-p:#141728;
+  --topbar:#131619;--cats:#131619;
 }
 
-html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background .25s,color .25s}
+html,body{height:100%;overflow:hidden;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background .25s,color .25s}
 .shell{display:grid;grid-template-rows:52px 1fr;grid-template-columns:210px 1fr 330px;height:100vh}
 
 /* ── Mobile: stack layout ── */
@@ -161,7 +163,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
   }
 }
 .topbar{grid-column:1/-1;background:var(--topbar);display:flex;align-items:center;padding:0 18px;gap:14px;transition:background .25s}
-.brand{display:flex;align-items:center;gap:8px;color:#fff;font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:15px;text-decoration:none}
+.brand{display:flex;align-items:center;gap:8px;color:#fff;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;text-decoration:none}
 .topbar-sep{width:1px;height:22px;background:#3a3a3c}
 .topbar-clock{font-size:12px;color:var(--dim);letter-spacing:.3px}
 .topbar-gap{flex:1}
@@ -208,6 +210,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .cat-btn:hover{background:#2c2c2e;color:#d1d1d6}
 .cat-btn.on{background:var(--tea);color:#fff}
 .cat-btn.on .num{background:rgba(255,255,255,.2);color:#fff}
+.cat-btn.on i,.cat-btn.on .lbl{color:#fff}
 .prod-panel{display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
 .search-bar{padding:12px 16px;background:var(--white);border-bottom:1px solid var(--line);flex-shrink:0}
 .search-inner{position:relative}
@@ -219,7 +222,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .prod-grid::-webkit-scrollbar{width:5px}
 .prod-grid::-webkit-scrollbar-thumb{background:#d1d1d6;border-radius:10px}
 .pcard{background:var(--white);border-radius:13px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .15s,box-shadow .15s,transform .1s;user-select:none}
-.pcard:hover{border-color:var(--tea);box-shadow:0 4px 18px rgba(61,107,79,.13)}
+.pcard:hover{border-color:var(--tea);box-shadow:0 4px 18px rgba(85,110,230,.15)}
 .pcard:active{transform:scale(.97)}
 .pcard.sold{opacity:.4;cursor:not-allowed;pointer-events:none}
 .pcard .thumb{height:108px;background:var(--tea-p);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
@@ -235,8 +238,8 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .s3{animation:steam 2s ease-in-out infinite 1.2s}
 .cart-panel{background:#f7f8f6;border-left:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden}
 .cart-head{padding:14px 16px 12px;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.cart-title{font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;color:var(--ink)}
-.cart-badge{background:var(--tea);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;display:none;font-family:'Instrument Sans',sans-serif}
+.cart-title{font-family:'Nunito',sans-serif;font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;color:var(--ink)}
+.cart-badge{background:var(--tea);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;display:none;font-family:'Nunito',sans-serif}
 .btn-clr{font-size:12px;color:var(--ink3);background:transparent;border:none;padding:4px 8px;border-radius:6px;cursor:pointer;font-family:inherit;display:none;transition:all .12s;align-items:center;gap:4px}
 .btn-clr:hover{background:#fee2e2;color:#b91c1c}
 .cart-list{flex:1;overflow-y:auto;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
@@ -271,56 +274,73 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .disc-inp:focus{outline:none;border-color:var(--tea)}
 .total-row{display:flex;justify-content:space-between;align-items:center;padding:11px 13px;background:var(--tea-p);border-radius:11px;margin-bottom:12px;border:1.5px solid var(--tea-l)}
 .total-lbl{font-size:13px;font-weight:600;color:#4a7c5f}
-.total-val{font-size:22px;font-weight:800;color:var(--tea);font-family:'Instrument Sans',sans-serif;letter-spacing:-.5px}
-.pay-btn{width:100%;background:var(--tea);color:#fff;border:none;border-radius:11px;padding:13px;font-size:15px;font-weight:700;font-family:'Instrument Sans',sans-serif;cursor:pointer;transition:background .15s,transform .1s;display:flex;align-items:center;justify-content:center;gap:8px}
+.total-val{font-size:22px;font-weight:800;color:var(--tea);font-family:'Nunito',sans-serif;letter-spacing:-.5px}
+.pay-btn{width:100%;background:var(--tea);color:#fff;border:none;border-radius:11px;padding:13px;font-size:15px;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;transition:background .15s,transform .1s;display:flex;align-items:center;justify-content:center;gap:8px}
 .pay-btn:hover:not(:disabled){background:var(--tea-d)}
 .pay-btn:active:not(:disabled){transform:scale(.98)}
 .pay-btn:disabled{background:#c8d5cc;color:#8fa898;cursor:not-allowed}
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:300;align-items:center;justify-content:center}
 .overlay.show{display:flex}
-.modal-box{background:var(--white);border-radius:18px;width:440px;max-width:95vw;box-shadow:0 24px 60px rgba(0,0,0,.22);animation:pop .2s ease;transition:width .25s ease;overflow:hidden}
-@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.mh{padding:18px 22px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
-.mh-title{font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:700}
-.mh-close{width:28px;height:28px;border-radius:50%;border:none;background:var(--bg);color:var(--ink3);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.mh-close:hover{background:var(--line)}
+.modal-box{background:var(--white);border-radius:24px;width:480px;max-width:96vw;max-height:94vh;box-shadow:0 32px 80px rgba(0,0,0,.28),0 8px 24px rgba(0,0,0,.12);animation:pop .28s cubic-bezier(.34,1.56,.64,1);transition:width .3s ease;overflow:hidden;display:flex;flex-direction:column}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.93)}to{opacity:1;transform:translateY(0) scale(1)}}
+.mh{padding:20px 24px 18px;border-bottom:none;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:linear-gradient(135deg,#556ee6 0%,#6c7ef7 60%,#a78bfa 100%)}
+.mh-title{font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;color:#fff;letter-spacing:-.2px;display:flex;align-items:center;gap:10px}
+.mh-title i{font-size:20px;opacity:.9}
+.mh-close{width:34px;height:34px;border-radius:10px;border:none;background:rgba(255,255,255,.2);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.mh-close:hover{background:rgba(255,255,255,.35)}
 .mb{padding:18px 22px}
-.mf{padding:14px 22px 20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-.amt-box{background:var(--tea-p);border-radius:12px;padding:14px 16px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center}
-.amt-lbl{font-size:12px;color:#4f7a60;font-weight:500}
-.amt-val{font-size:26px;font-weight:800;color:var(--tea);font-family:'Instrument Sans',sans-serif;letter-spacing:-.5px}
-.amt-cnt{font-size:12px;color:#7fad90;margin-top:2px}
-.meth-lbl{font-size:12px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.meth-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
-.meth{border:2px solid var(--line);border-radius:10px;padding:12px 6px;background:var(--white);text-align:center;cursor:pointer;transition:all .12s;font-family:inherit}
-.meth i{display:block;font-size:22px;color:var(--ink3);margin-bottom:5px}
-.meth span{font-size:12px;font-weight:600;color:var(--ink3)}
-.meth:hover{border-color:var(--tea)}
-.meth.on{border-color:var(--tea);background:var(--tea-l)}
+.mf{padding:16px 24px 20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-shrink:0;background:var(--white)}
+/* ── Total box dark ── */
+.amt-box{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);border-radius:18px;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden;margin-bottom:22px}
+.amt-box::before{content:'';position:absolute;top:-50px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(108,126,247,.15);pointer-events:none}
+.amt-box::after{content:'';position:absolute;bottom:-40px;left:20%;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+.amt-lbl{font-size:10px;font-weight:800;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.amt-val{font-size:32px;font-weight:900;color:#fff;font-family:'Nunito',sans-serif;letter-spacing:-1px;line-height:1}
+.amt-cnt{font-size:12px;color:rgba(255,255,255,.45);margin-top:6px;font-weight:600}
+.amt-icon{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:26px;color:rgba(255,255,255,.85);flex-shrink:0;position:relative;z-index:1}
+/* ── Metode ── */
+.meth-lbl{font-size:10px;font-weight:800;color:var(--ink3);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px}
+.meth-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}
+.meth{border:2px solid var(--line);border-radius:14px;padding:16px 10px 14px;background:var(--white);text-align:center;cursor:pointer;transition:all .2s;font-family:inherit;position:relative;overflow:hidden}
+.meth-ico-wrap{width:44px;height:44px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;transition:all .2s}
+.meth i{font-size:20px;color:var(--ink3);transition:color .2s}
+.meth span{font-size:13px;font-weight:700;color:var(--ink3);transition:color .2s;display:block}
+.meth:hover{border-color:var(--tea);transform:translateY(-2px);box-shadow:0 6px 20px rgba(85,110,230,.15)}
+.meth:hover .meth-ico-wrap{background:var(--tea-l)}
+.meth:hover i,.meth:hover span{color:var(--tea)}
+.meth.on{border-color:var(--tea);box-shadow:0 6px 24px rgba(85,110,230,.25)}
+.meth.on .meth-ico-wrap{background:var(--tea-l)}
 .meth.on i,.meth.on span{color:var(--tea)}
-.pay-lbl{font-size:12px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.pay-inp-wr{position:relative;margin-bottom:10px}
-.pay-inp-wr .pfx{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:700;color:var(--dim);font-family:'Instrument Sans',sans-serif;pointer-events:none}
-.pay-inp-wr input{width:100%;height:50px;padding:0 14px 0 44px;border:2px solid var(--line);border-radius:11px;font-size:22px;font-weight:800;font-family:'Instrument Sans',sans-serif;color:var(--ink);letter-spacing:-.3px;transition:border-color .15s}
-.pay-inp-wr input:focus{outline:none;border-color:var(--tea)}
-.quick-btns{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.quick-btns button{padding:5px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);font-size:12px;font-weight:600;font-family:'Instrument Sans',sans-serif;color:var(--ink2);cursor:pointer;transition:all .12s}
-.quick-btns button:hover{border-color:var(--tea);background:var(--tea-l);color:var(--tea)}
-.change-box{display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-radius:10px;padding:11px 14px}
-.chg-lbl{font-size:13px;font-weight:600;color:var(--ink3)}
-.chg-val{font-size:20px;font-weight:800;color:var(--tea);font-family:'Instrument Sans',sans-serif;letter-spacing:-.3px}
+/* ── Uang diterima ── */
+.pay-lbl{font-size:10px;font-weight:800;color:var(--ink3);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px}
+.pay-inp-wr{position:relative;margin-bottom:12px}
+.pay-inp-wr .pfx{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:800;color:var(--dim);font-family:'Nunito',sans-serif;pointer-events:none}
+.pay-inp-wr input{width:100%;height:58px;padding:0 18px 0 48px;border:2px solid var(--line);border-radius:14px;font-size:26px;font-weight:900;font-family:'Nunito',sans-serif;color:var(--ink2);letter-spacing:-.5px;transition:all .2s;background:var(--bg)}
+.pay-inp-wr input::placeholder{color:#d1d5db;font-weight:400;font-size:22px}
+.pay-inp-wr input:focus{outline:none;border-color:var(--tea);background:var(--white);box-shadow:0 0 0 4px rgba(85,110,230,.1)}
+/* ── Quick buttons ── */
+.quick-btns{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.quick-btns button{padding:7px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--white);font-size:13px;font-weight:700;font-family:'Nunito',sans-serif;color:var(--ink2);cursor:pointer;transition:all .15s;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.quick-btns button:hover{border-color:var(--tea);background:var(--tea-l);color:var(--tea);transform:translateY(-1px);box-shadow:0 4px 12px rgba(85,110,230,.2)}
+.quick-btns button:active{transform:translateY(0)}
+/* ── Kembalian ── */
+.change-box{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:14px;padding:14px 18px;border:1.5px solid #bbf7d0}
+.chg-lbl{font-size:12px;font-weight:700;color:#166534;display:flex;align-items:center;gap:6px}
+.chg-val{font-size:24px;font-weight:900;color:#16a34a;font-family:'Nunito',sans-serif;letter-spacing:-.5px}
 .noncash-info{background:#f0f8ff;border-radius:10px;padding:13px 14px;font-size:13px;color:#2d6a9f}
-.btn-cancel{padding:10px 20px;border-radius:10px;border:1.5px solid var(--line);background:var(--white);font-size:14px;font-weight:600;font-family:inherit;color:var(--ink3);cursor:pointer}
-.btn-cancel:hover{background:var(--bg)}
-.btn-ok{padding:10px 26px;border-radius:10px;border:none;background:var(--tea);color:#fff;font-size:14px;font-weight:700;font-family:'Instrument Sans',sans-serif;cursor:pointer;transition:background .15s}
-.btn-ok:hover{background:var(--tea-d)}
-.btn-ok:disabled{background:var(--dim);cursor:not-allowed}
+/* ── Tombol ── */
+.btn-cancel{flex:1;padding:13px 0;border-radius:13px;border:2px solid var(--line);background:var(--white);font-size:14px;font-weight:700;font-family:inherit;color:var(--ink3);cursor:pointer;transition:all .15s}
+.btn-cancel:hover{background:var(--bg);border-color:var(--dim);color:var(--ink)}
+.btn-ok{flex:2;padding:13px 0;border-radius:13px;border:none;background:linear-gradient(135deg,#556ee6,#4458c9);color:#fff;font-size:15px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:all .2s;box-shadow:0 4px 18px rgba(85,110,230,.4);display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-ok:hover{background:linear-gradient(135deg,#4458c9,#3346b5);box-shadow:0 8px 28px rgba(85,110,230,.55);transform:translateY(-1px)}
+.btn-ok:active{transform:translateY(0)}
+.btn-ok:disabled{background:linear-gradient(135deg,#c8cfe8,#b0bbd4);box-shadow:none;cursor:not-allowed;transform:none}
 .success-inner{text-align:center;padding:32px 24px 28px}
-.sttl{font-size:20px;font-weight:800;font-family:'Instrument Sans',sans-serif;margin-bottom:4px;margin-top:12px}
+.sttl{font-size:20px;font-weight:800;font-family:'Nunito',sans-serif;margin-bottom:4px;margin-top:12px}
 .sinv{font-size:12px;color:var(--dim);font-family:monospace;margin-bottom:4px}
-.schg{font-size:18px;font-weight:700;color:var(--tea);margin-bottom:22px;font-family:'Instrument Sans',sans-serif}
+.schg{font-size:18px;font-weight:700;color:var(--tea);margin-bottom:22px;font-family:'Nunito',sans-serif}
 .sbtns{display:flex;flex-direction:column;gap:8px}
-.sbtns a,.sbtns button{padding:11px;border-radius:10px;font-size:14px;font-weight:600;font-family:'Instrument Sans',sans-serif;cursor:pointer;border:none;text-decoration:none;display:block;text-align:center}
+.sbtns a,.sbtns button{padding:11px;border-radius:10px;font-size:14px;font-weight:600;font-family:'Nunito',sans-serif;cursor:pointer;border:none;text-decoration:none;display:block;text-align:center}
 .btn-print{background:var(--bg);color:var(--ink2);border:1.5px solid var(--line) !important}
 .btn-print:hover{background:var(--line)}
 .btn-new{background:var(--tea);color:#fff}
@@ -329,40 +349,43 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .toast.show{opacity:1}
 
 /* ── DARK MODE overrides ── */
-[data-theme="dark"] .pcard{background:#252527;border-color:#3a3a3c}
-[data-theme="dark"] .pcard:hover{border-color:var(--tea);box-shadow:0 4px 18px rgba(74,222,128,.15)}
-[data-theme="dark"] .pcard .pname{color:#e5e5ea}
-[data-theme="dark"] .search-bar,[data-theme="dark"] .cart-head,[data-theme="dark"] .cart-foot{background:#1c1c1e;border-color:#3a3a3c}
-[data-theme="dark"] .search-inner input{background:#2c2c2e;color:#f2f2f7;border-color:#3a3a3c}
-[data-theme="dark"] .search-inner input:focus{background:#2c2c2e;border-color:var(--tea)}
-[data-theme="dark"] .cart-panel{background:#111113;border-color:#3a3a3c}
-[data-theme="dark"] .ci{background:#252527;border-color:#3a3a3c}
-[data-theme="dark"] .ci-name{color:#e5e5ea}
-[data-theme="dark"] .sum-block{background:#252527}
-[data-theme="dark"] .disc-inp{background:#1c1c1e;border-color:#3a3a3c;color:#f2f2f7}
-[data-theme="dark"] .total-row{background:#0a1f13;border-color:#166534}
-[data-theme="dark"] .cust-row{background:#252527;border-color:transparent}
-[data-theme="dark"] .cust-inp{color:#f2f2f7}
-[data-theme="dark"] .qb{background:#252527;border-color:#3a3a3c;color:#e5e5ea}
-[data-theme="dark"] .modal-box{background:#1c1c1e}
-[data-theme="dark"] .mh{border-color:#3a3a3c}
-[data-theme="dark"] .mh-title{color:#f2f2f7}
-[data-theme="dark"] .mf{border-color:#3a3a3c}
-[data-theme="dark"] .amt-box{background:#0a1f13}
-[data-theme="dark"] .meth{background:#252527;border-color:#3a3a3c}
-[data-theme="dark"] .meth span{color:#aeaeb2}
-[data-theme="dark"] .meth i{color:#aeaeb2}
-[data-theme="dark"] .meth.on{background:#0a1f13;border-color:var(--tea)}
-[data-theme="dark"] .pay-inp-wr input{background:#252527;border-color:#3a3a3c;color:#f2f2f7}
-[data-theme="dark"] .quick-btns button{background:#252527;border-color:#3a3a3c;color:#e5e5ea}
-[data-theme="dark"] .change-box{background:#252527}
-[data-theme="dark"] .chg-lbl{color:#aeaeb2}
-[data-theme="dark"] .btn-cancel{background:#252527;border-color:#3a3a3c;color:#aeaeb2}
-[data-theme="dark"] .success-inner{background:#1c1c1e}
-[data-theme="dark"] .sttl{color:#f2f2f7}
-[data-theme="dark"] .btn-print{background:#252527;color:#e5e5ea;border-color:#3a3a3c !important}
-[data-theme="dark"] .empty-state .etxt{color:#636366}
-[data-theme="dark"] .prod-panel{background:#111113}
+[data-theme="dark"] .pcard{background:#252830;border-color:#32383e}
+[data-theme="dark"] .pcard:hover{border-color:var(--tea);box-shadow:0 4px 18px rgba(85,110,230,.2)}
+[data-theme="dark"] .pcard .pname{color:#e9ecef}
+[data-theme="dark"] .search-bar,[data-theme="dark"] .cart-head,[data-theme="dark"] .cart-foot{background:#212529;border-color:#32383e}
+[data-theme="dark"] .search-inner input{background:#2c3035;color:#f8f9fa;border-color:#32383e}
+[data-theme="dark"] .search-inner input:focus{background:#2c3035;border-color:var(--tea)}
+[data-theme="dark"] .cart-panel{background:#1a1d23;border-color:#32383e}
+[data-theme="dark"] .ci{background:#252830;border-color:#32383e}
+[data-theme="dark"] .ci-name{color:#e9ecef}
+[data-theme="dark"] .sum-block{background:#252830}
+[data-theme="dark"] .disc-inp{background:#212529;border-color:#32383e;color:#f8f9fa}
+[data-theme="dark"] .total-row{background:#1a1f3a;border-color:#2d3561}
+[data-theme="dark"] .cust-row{background:#252830;border-color:transparent}
+[data-theme="dark"] .cust-inp{color:#f8f9fa}
+[data-theme="dark"] .qb{background:#252830;border-color:#32383e;color:#e9ecef}
+[data-theme="dark"] .modal-box{background:#212529}
+[data-theme="dark"] .mh{background:linear-gradient(135deg,#3d4fa8,#4a5bb8,#5563c1)}
+[data-theme="dark"] .mf{border-color:#32383e;background:#212529}
+[data-theme="dark"] .amt-box{background:linear-gradient(135deg,#0a0818,#1a1640,#141230)}
+[data-theme="dark"] .meth{background:#252830;border-color:#32383e}
+[data-theme="dark"] .meth span{color:#adb5bd}
+[data-theme="dark"] .meth i{color:#adb5bd}
+[data-theme="dark"] .meth-ico-wrap{background:#2c3035}
+[data-theme="dark"] .meth.on{background:#1a1f3a;border-color:var(--tea)}
+[data-theme="dark"] .meth.on .meth-ico-wrap{background:#1e2550}
+[data-theme="dark"] .pay-inp-wr input{background:#252830;border-color:#32383e;color:#f8f9fa}
+[data-theme="dark"] .pay-inp-wr input:focus{background:#2c3035;border-color:var(--tea)}
+[data-theme="dark"] .quick-btns button{background:#252830;border-color:#32383e;color:#e9ecef}
+[data-theme="dark"] .change-box{background:linear-gradient(135deg,#0d2117,#0a1f12);border-color:#14532d}
+[data-theme="dark"] .chg-lbl{color:#4ade80}
+[data-theme="dark"] .chg-val{color:#4ade80}
+[data-theme="dark"] .btn-cancel{background:#252830;border-color:#32383e;color:#adb5bd}
+[data-theme="dark"] .success-inner{background:#212529}
+[data-theme="dark"] .sttl{color:#f8f9fa}
+[data-theme="dark"] .btn-print{background:#252830;color:#e9ecef;border-color:#32383e !important}
+[data-theme="dark"] .empty-state .etxt{color:#6c757d}
+[data-theme="dark"] .prod-panel{background:#1a1d23}
 </style>
 </head>
 <body>
@@ -371,20 +394,16 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 {{-- TOPBAR --}}
 <header class="topbar">
   <a href="{{ route('dashboard') }}" class="brand">
-    <svg width="32" height="32" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="22" cy="22" r="22" fill="#d4522a"/>
-      <circle cx="22" cy="22" r="18" fill="#ffffff"/>
-      <circle cx="22" cy="22" r="11" fill="#f97316" stroke="#d4522a" stroke-width="1.5"/>
-      <circle cx="22" cy="22" r="5" fill="#ffffff"/>
-      <rect x="16" y="12" width="3" height="1.5" rx="0.75" fill="#ec4899" transform="rotate(-30 16 12)"/>
-      <rect x="26" y="13" width="3" height="1.5" rx="0.75" fill="#3b82f6" transform="rotate(20 26 13)"/>
-      <rect x="29" y="21" width="3" height="1.5" rx="0.75" fill="#22c55e" transform="rotate(-10 29 21)"/>
-      <rect x="26" y="29" width="3" height="1.5" rx="0.75" fill="#f59e0b" transform="rotate(40 26 29)"/>
-      <rect x="16" y="30" width="3" height="1.5" rx="0.75" fill="#ec4899" transform="rotate(-20 16 30)"/>
-      <rect x="12" y="22" width="3" height="1.5" rx="0.75" fill="#a855f7" transform="rotate(10 12 22)"/>
-      <text x="22" y="24.5" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="5.5" fill="#7c2d12">DONIK</text>
-      <text x="22" y="30.5" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="4" fill="#7c2d12">DONUTS</text>
-    </svg>
+    @if(file_exists(public_path('images/logo.png')))
+        <img src="{{ asset('images/logo.png') }}" alt="Donik Donuts" width="32" height="32" style="border-radius:50%;object-fit:cover">
+    @else
+        <svg width="32" height="32" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="55" cy="55" r="55" fill="#1a1a1a"/>
+            <circle cx="55" cy="42" r="20" fill="#f5c518"/>
+            <ellipse cx="55" cy="39" rx="16" ry="12" fill="#f472b6"/>
+            <circle cx="55" cy="42" r="7" fill="#1a1a1a"/>
+        </svg>
+    @endif
     Donik Donuts
   </a>
   <div class="topbar-sep"></div>
@@ -517,40 +536,47 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 {{-- PAYMENT MODAL --}}
 <div class="overlay" id="payOverlay">
   <div class="modal-box" id="payModalBox">
+
+    {{-- Header gradient ── --}}
     <div class="mh">
-      <span class="mh-title">Pembayaran</span>
-      <button class="mh-close" id="btnClosePay"><i class="bi bi-x"></i></button>
+      <span class="mh-title">
+        <i class="bi bi-credit-card-2-front-fill"></i>
+        Pembayaran
+      </span>
+      <button class="mh-close" id="btnClosePay"><i class="bi bi-x-lg"></i></button>
     </div>
 
-    <div style="display:flex;min-height:0">
+    <div style="display:flex;min-height:0;flex:1;overflow:hidden">
 
-      {{-- Kolom kiri: info + metode + cash input --}}
-      <div id="payLeft" style="flex:1;padding:18px 22px;min-width:0">
+      {{-- Kolom kiri --}}
+      <div id="payLeft" style="flex:1;padding:22px 24px;min-width:0;overflow-y:auto">
+
+        {{-- Total tagihan dark card ── --}}
         <div class="amt-box">
-          <div>
+          <div style="position:relative;z-index:1">
             <div class="amt-lbl">Total tagihan</div>
             <div class="amt-val" id="mTotal">Rp 0</div>
             <div class="amt-cnt" id="mCount">0 item</div>
           </div>
-          <svg width="42" height="42" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="22" cy="22" r="22" fill="#d4522a"/>
-            <circle cx="22" cy="22" r="18" fill="#ffffff"/>
-            <circle cx="22" cy="22" r="11" fill="#f97316" stroke="#d4522a" stroke-width="1.5"/>
-            <circle cx="22" cy="22" r="5" fill="#ffffff"/>
-            <rect x="16" y="12" width="3" height="1.5" rx="0.75" fill="#ec4899" transform="rotate(-30 16 12)"/>
-            <rect x="26" y="13" width="3" height="1.5" rx="0.75" fill="#3b82f6" transform="rotate(20 26 13)"/>
-            <rect x="29" y="21" width="3" height="1.5" rx="0.75" fill="#22c55e" transform="rotate(-10 29 21)"/>
-            <rect x="26" y="29" width="3" height="1.5" rx="0.75" fill="#f59e0b" transform="rotate(40 26 29)"/>
-            <rect x="16" y="30" width="3" height="1.5" rx="0.75" fill="#ec4899" transform="rotate(-20 16 30)"/>
-            <rect x="12" y="22" width="3" height="1.5" rx="0.75" fill="#a855f7" transform="rotate(10 12 22)"/>
-            <text x="22" y="24.5" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="5.5" fill="#7c2d12">DONIK</text>
-            <text x="22" y="30.5" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="4" fill="#7c2d12">DONUTS</text>
-          </svg>
+          <div class="amt-icon">
+            <i class="bi bi-wallet2"></i>
+          </div>
+        </div>
+
+        {{-- Metode pembayaran ── --}}
         <div class="meth-lbl">Metode Pembayaran</div>
         <div class="meth-grid">
-          <button class="meth on" data-m="cash"><i class="bi bi-cash"></i><span>Tunai</span></button>
-          <button class="meth" data-m="qris"><i class="bi bi-qr-code-scan"></i><span>QRIS</span></button>
+          <button class="meth on" data-m="cash">
+            <div class="meth-ico-wrap"><i class="bi bi-cash-coin"></i></div>
+            <span>Tunai</span>
+          </button>
+          <button class="meth" data-m="qris">
+            <div class="meth-ico-wrap"><i class="bi bi-qr-code-scan"></i></div>
+            <span>QRIS</span>
+          </button>
         </div>
+
+        {{-- Seksi tunai ── --}}
         <div id="cashSec">
           <div class="pay-lbl">Uang Diterima</div>
           <div class="pay-inp-wr">
@@ -559,17 +585,22 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
           </div>
           <div class="quick-btns" id="quickBtns"></div>
           <div class="change-box">
-            <span class="chg-lbl">Kembalian</span>
+            <span class="chg-lbl"><i class="bi bi-arrow-return-left" style="font-size:14px"></i> Kembalian</span>
             <span class="chg-val" id="elChange">Rp 0</span>
           </div>
         </div>
+
+        {{-- Seksi QRIS ── --}}
         <div id="noncashSec" style="display:none">
-          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:12px 14px;margin-top:4px;text-align:center">
-            <i class="bi bi-check-circle-fill" style="color:#16a34a;font-size:18px;display:block;margin-bottom:6px"></i>
-            <div style="font-size:13px;font-weight:600;color:#166534;margin-bottom:2px">Scan QR Code di samping</div>
-            <div style="font-size:12px;color:#4ade80">Konfirmasi setelah pembayaran selesai</div>
+          <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1.5px solid #bbf7d0;border-radius:14px;padding:18px;text-align:center">
+            <div style="width:48px;height:48px;background:#dcfce7;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px">
+              <i class="bi bi-check-circle-fill" style="color:#16a34a;font-size:22px"></i>
+            </div>
+            <div style="font-size:14px;font-weight:800;color:#166534;margin-bottom:4px">Scan QR Code</div>
+            <div style="font-size:12px;color:#16a34a;font-weight:500">Konfirmasi setelah pembayaran selesai</div>
           </div>
         </div>
+
       </div>
 
       {{-- Kolom kanan: QRIS card (muncul saat QRIS dipilih) --}}
@@ -655,8 +686,12 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
     </div>{{-- end flex row --}}
 
     <div class="mf">
-      <button class="btn-cancel" id="btnCancelPay">Batal</button>
-      <button class="btn-ok" id="btnConfirm">Konfirmasi</button>
+      <button class="btn-cancel" id="btnCancelPay">
+        <i class="bi bi-x-circle" style="margin-right:6px"></i>Batal
+      </button>
+      <button class="btn-ok" id="btnConfirm">
+        <i class="bi bi-check-circle-fill"></i> Konfirmasi
+      </button>
     </div>
   </div>
 </div>
